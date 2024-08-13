@@ -16,12 +16,6 @@
     font-weight: 600;
 }
 
-@font-face {
-    font-family: Outfit;
-    src: url(assets/fonts/outfit/static/Outfit-Bold.ttf);
-    font-weight: 700;
-}
-
 
 body {
     font-family: 'Outfit', sans-serif;
@@ -84,7 +78,7 @@ h1 {
     font-weight: 600;
     margin: 0 0 10px 20px;
     font-size: 18px;
-    color: hsl(332, 51%, 32%);
+    color: #7B284FFF
 }
 
 
@@ -94,7 +88,7 @@ h1 {
 }
 
 .prep-time li::marker {
-    color: hsl(332, 51%, 32%)
+    color: #7B284FFF
 }
 
 h2 {
@@ -116,7 +110,7 @@ h2 {
 }
 
 .instructions li::marker, .ingredients li::marker {
-    color: hsl(14, 45%, 36%);
+    color: #854632FF;
     font-weight: bold;
 }
 
@@ -128,7 +122,6 @@ hr {
 }
 
 .nutrition {
-    font-size: 14px;
     color: #666;
     margin-bottom: 10px;
 }
@@ -182,5 +175,8 @@ hr {
         padding: 0 20px
     }
 
-
+    .ingredients li,
+    .instructions li {
+        padding: 0 10px;
+    }
 }
