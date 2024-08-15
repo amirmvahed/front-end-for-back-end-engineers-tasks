@@ -1,7 +1,7 @@
 document.getElementById("form").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    // Validate the form
+    // Collect form data
     let firstName = document.getElementById("fname").value;
     let lastName = document.getElementById("lname").value;
     let email = document.getElementById("email").value;
