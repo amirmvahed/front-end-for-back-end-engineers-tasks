@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+:root {
+    --Green200: hsl(148, 38%, 91%);
+    --Green600: hsl(169, 82%, 27%);
+    --Red: hsl(0, 66%, 54%);
+
+    /* neutral */
+    --White: hsl(0, 0%, 100%);
+    --Grey500: hsl(186, 15%, 59%);
+    --Grey900: hsl(187, 24%, 22%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--Green200);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Karla", sans-serif;
+}
+
+label,
+input {
+    font-family: "Karla", sans-serif;
+}
+
+#form {
+    margin: 1rem;
+    background-color: var(--White);
+    padding: 1rem;
+    border-radius: 0.625rem;
+}
+
+#form h1 {
+    margin: 1rem 0;
+    color: var(--Grey900);
+}
+
+label {
+    color: var(--Grey500);
+    display: inline-block;
+    margin: 0.5rem 0;
+}
+
+.data,
+.choice {
+    width: 95%;
+    border-radius: 0.3rem;
+    padding: 1rem 1rem;
+    border: 1px solid var(--Green600);
+}
+
+.choice {
+    margin: 0.5rem 0;
+    padding: 1rem 1rem;
+    margin-left: 0.5rem;
+}
+
+.choice input {
+    margin: 0 1rem;
+}
+
+textarea {
+    width: 95%;
+    min-height: 200px;
+    border-radius: 0.3rem;
+    border: 1px solid var(--Green600);
+    padding: 1rem;
+}
+
+.consent_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.consent_container input {
+    margin-right: 1rem;
+    margin-bottom: 0;
+}
+
+#consent:checked {
+    background-color: var(--Green600);
+}
+
+button {
+    width: 95%;
+    padding: 1rem 0;
+    border-radius: 0.3rem;
+    background-color: var(--Green600);
+    color: var(--White);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--Grey900);
+}
+
+.error {
+    color: var(--Red);
+    display: block;
+}
+
+.error-input {
+    border: 1px solid var(--Red);
+}
+
+@media screen and (min-width: 1000px) {
+    #form {
+        min-width: 700px;
+    }
+
+    .name {
+        display: flex;
+        width: 95%;
+    }
+
+    .f_name,
+    .l_name {
+        width: 50%;
+    }
+
+    .choice_container {
+        display: flex;
+        width: 95%;
+    }
+}
