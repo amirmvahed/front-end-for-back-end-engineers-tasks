@@ -1,0 +1,79 @@
+@font-face {
+    src: url("assets/fonts/SEGA.TTF");
+    font-family: "Sega";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #2a5298;
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 200;
+    color: #0ccac4;
+    font-family: 'Sega', sans-serif;
+}
+
+#search {
+    padding: 10px;
+    width: 300px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: #a0e7e5;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin: 16px;
+}
+
+
+.card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: #555;
+}
+
+@media (max-width: 400px) {
+    .title {
+        font-size: 2rem;
+    }
+    #search {
+        width: 80%;
+    }
+    .card {
+        width: 80%;
+    }
+}
