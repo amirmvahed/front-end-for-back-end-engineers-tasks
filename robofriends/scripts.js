@@ -1,53 +1,54 @@
-const apiUrl = 'https://jsonplaceholder.typicode.com/users'; // Replace this with your API URL
+const apiUrl = 'https://jsonplaceholder.typicode.com/users'
+const robotCardContainer = document.getElementById('robot-cards')
+const searchInput = document.getElementById('search')
 
-const searchInput = document.getElementById('search');
-const robotCardsContainer = document.getElementById('robot-cards');
+fetch(apiUrl).then(response => response.json()).then(data => {
+    createRobotCards(data)
+}).catch(error => console.error(error))
 
-// Fetch data from the API and create cards
-fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-        createRobotCards(data);
-    })
-    .catch(error => console.error('Error fetching data:', error));
 
-// Create robot cards
 function createRobotCards(data) {
-    console.log(data)
-    data.forEach(robot => {
-        const card = document.createElement('div');
-        card.classList.add('card');
+    data.forEach((robot) => {
 
-        const img = document.createElement('img');
-        img.src = `https://robohash.org/${robot.id}?set=set2`;
+        const card = document.createElement('div')
+        card.classList.add('card')
+
+        const img = document.createElement('img')
+        img.src = `https://robohash.org/${robot.id}?set=set2`
         img.alt = robot.name;
 
-        const name = document.createElement('h2');
+        const name = document.createElement('h2')
         name.textContent = robot.name;
 
-        const email = document.createElement('p');
+        const email = document.createElement('p')
         email.textContent = robot.email;
 
-        card.appendChild(img);
-        card.appendChild(name);
-        card.appendChild(email);
+        card.appendChild(img)
+        card.appendChild(name)
+        card.appendChild(email)
 
-        robotCardsContainer.appendChild(card);
-    });
+        robotCardContainer.appendChild(card)
+
+    })
 }
 
-// Filter robots by name
-searchInput.addEventListener('input', function () {
-    const searchTerm = searchInput.value.toLowerCase();
-    const robotCards = document.querySelectorAll('.card');
+searchInput.addEventListener('input', () => {
+    const searchValue = searchInput.value.toLowerCase()
+    const robotCards = document.querySelectorAll('.card')
 
-    robotCards.forEach(card => {
-        const robotName = card.querySelector('h2').textContent.toLowerCase();
-        const robotEmail = card.querySelector('p').textContent.toLowerCase();
-        if (robotName.includes(searchTerm) || robotEmail.includes(searchTerm)) {
-            card.style.display = 'block';
+    robotCards.forEach(robotCard => {
+        const robotName = robotCard.querySelector('h2').textContent.toLowerCase()
+        const robotEmail = robotCard.querySelector('p').textContent.toLowerCase()
+
+        if (robotName.includes(searchValue) || robotEmail.includes(searchValue)) {
+            robotCard.style.display = 'block'
         } else {
-            card.style.display = 'none';
+            robotCard.style.display = 'none'
         }
-    });
-});
+
+    })
+
+})
+
+
+
